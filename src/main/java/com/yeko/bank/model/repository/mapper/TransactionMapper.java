@@ -14,7 +14,7 @@ public class TransactionMapper implements RowMapper<Transaction> {
     transaction.setSenderAcc(resultSet.getInt("sender_acc_id"));
     transaction.setGetterAcc(resultSet.getInt("getter_acc_id"));
     transaction.setAmount(resultSet.getDouble("amount"));
-    transaction.setAddDate(resultSet.getString("add_date"));
+    transaction.setAddDate(resultSet.getString("add_date_time"));
     return transaction;
   }
 }
