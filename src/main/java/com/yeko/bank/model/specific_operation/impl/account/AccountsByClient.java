@@ -5,15 +5,16 @@ import com.yeko.bank.model.store_queries.QueryStore;
 
 public class AccountsByClient implements ToSQL {
 
-    private int client;
+    private int clientId;
 
-    public AccountsByClient(int client) {
-        this.client = client;
+    public AccountsByClient(int clientId) {
+        this.clientId = clientId;
     }
 
     @Override
     public String toSQLQuery() {
-        String query = QueryStore.GET_ACCOUNTS_BY_CLIENT + client;
-        return query;
+        return String.format(
+            QueryStore.GET_ACCOUNTS_BY_CLIENT,
+            clientId);
     }
 }
