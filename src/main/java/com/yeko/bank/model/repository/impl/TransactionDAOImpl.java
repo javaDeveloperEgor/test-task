@@ -6,13 +6,15 @@ import com.yeko.bank.model.repository.mapper.TransactionMapper;
 import com.yeko.bank.model.specific_operation.ToSQL;
 import com.yeko.bank.model.store_queries.QueryStore;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class TransactionDAOImpl implements AbstractDAO<Transaction> {
 
-  JdbcTemplate template;
+  @Autowired
+  private JdbcTemplate template;
 
   public boolean add(Transaction item) {
     String query = QueryStore.INSERT_TRANSACTION;

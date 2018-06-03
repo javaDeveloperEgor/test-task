@@ -13,8 +13,6 @@ public class AccountsByClient implements ToSQL {
 
     @Override
     public String toSQLQuery() {
-        return String.format(
-            QueryStore.GET_ACCOUNTS_BY_CLIENT,
-            clientId);
+        return QueryStore.GET_ACCOUNTS_BY_CLIENT.replace("?", String.valueOf(clientId));
     }
 }

@@ -33,8 +33,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<Account> getAllByClient(int client) {
-        ToSQL allByClientQuery = new AccountsByClient(client);
+    public List<Account> getAllByClient(int clientId) {
+        ToSQL allByClientQuery = new AccountsByClient(clientId);
         return accountDAO.query(allByClientQuery);
     }
 }
